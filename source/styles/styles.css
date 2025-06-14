@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
 
+:root {
+    --diagonal-gradient: linear-gradient(45deg, #3700c3, #ff0066);
+    --diagonal-gradient-2: linear-gradient(45deg, #8500c3, #ff0000);
+    --diagonal-gradient-3: linear-gradient(180deg, #00000000, #121212);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: rgb(0, 0, 0);
     color: #fff;
@@ -7,5 +17,76 @@ body {
     margin: 0;
     padding: 0;
     height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
+.strong {
+    border-radius: 0 5px 5px 0;
+    padding: 5px 10px;
+    background-image: var(--diagonal-gradient);
+}
+
+.cabeçalho {
+    background-image: var(--diagonal-gradient-3);
+    color: #fff;
+    text-align: center;
+    width: 100%vh;
+    height: 70vh;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.conteudo-principal span{
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+    padding: 10px;
+    letter-spacing: 4px;
+}
+.conteudo-principal h1{
+    font-size: 120px;
+    font-weight: 700;
+    margin: 0;
+}
+
+#btn-ver-projects{
+    background-image: var(--diagonal-gradient-2);
+    border: none;
+    border-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#btn-ver-projects:hover {
+    border-radius: 15px;
+    background-image: var(--diagonal-gradient);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
+}
