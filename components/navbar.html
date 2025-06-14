@@ -1,0 +1,108 @@
+<style>
+    :root {
+    --diagonal-gradient: linear-gradient(45deg, #3700c3, #ff0066);
+    --diagonal-gradient-2: linear-gradient(45deg, #8500c3, #ff0000);
+}
+
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 80px;
+    background-color: transparent;
+    padding: 0 15%;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    height: 60px;
+    gap: 5px;
+    cursor:default;
+}
+
+.logo h2 {
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    background-image: var(--diagonal-gradient);
+    transition: all 0.3s ease-in-out;
+}
+
+.logo h2:hover{
+    transform: scale(1.05) rotate3d(0, 1, 0, 10deg);
+    transition: all 0.3s ease-in-out;
+    background-image: var(--diagonal-gradient-2);
+}
+
+.links-navbar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 60px;
+    
+}
+
+.links-navbar ul li {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.links-navbar ul li a {    
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 0;
+    border: 1px solid transparent;
+    font-weight: 500;
+    border-image: var(--diagonal-gradient) 1;
+}
+
+.links-navbar ul li a:hover {
+    border-image: var(--diagonal-gradient-2) 1;
+    background-image: var(--diagonal-gradient-2);
+    border-width: 3px;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(255,255,255,0.2);
+}
+</style>
+
+<body>
+<header id="header">
+    <nav class="navbar">
+        <div class="logo">
+            <h1>PORTIFÓLIO</h1>
+            <h2>.douglasteyh</h2>
+        </div>
+        <div class="links-navbar">
+            <ul>
+                <li><a id="orcamento-btn" href="orcamento.html">Fazer Orçamento</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+</body>
