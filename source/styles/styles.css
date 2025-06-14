@@ -125,9 +125,15 @@ body {
     padding: 20px;
 }
 
-.tecnologias-items div {
+.tecnologias-item i {
+    color: #fff;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.tecnologia-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     margin: 10px;
@@ -136,7 +142,4 @@ body {
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease-in-out;
-}
-.tecnologias-items i {
-    color: #fff;
 }
