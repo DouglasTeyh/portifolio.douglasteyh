@@ -13,6 +13,7 @@ html {
     width: 100%;
     overflow-x: hidden;
 }
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -28,6 +29,7 @@ body {
 }
 
 .strong {
+    color: #ffffff;
     border-radius: 0 5px 5px 0;
     padding: 5px 10px;
     background-image: var(--diagonal-gradient);
@@ -51,20 +53,21 @@ body {
     animation: flutuar 3s ease-in-out infinite;
 }
 
-.conteudo-principal span{
+.conteudo-principal span {
     font-size: 16px;
     font-weight: 300;
     margin: 0;
     padding: 10px;
     letter-spacing: 4px;
 }
-.conteudo-principal h1{
+
+.conteudo-principal h1 {
     font-size: 120px;
     font-weight: 700;
     margin: 0;
 }
 
-#btn-ver-projects{
+#btn-ver-projects {
     background-image: var(--diagonal-gradient-2);
     border: none;
     border-radius: 0px;
@@ -92,13 +95,15 @@ body {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
+
     100% {
         transform: translateY(0);
     }
-    
+
 }
 
 #tecnologias {
@@ -107,7 +112,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: auto;
+    min-height: 450px;
     padding: 50px 0;
     background-image: var(--diagonal-gradient-2);
 }
@@ -129,7 +134,7 @@ body {
 
 
 
-i {
+.tecnologia-item i {
     color: #fff;
     font-size: 50px;
 }
@@ -143,17 +148,40 @@ i {
     height: 120px;
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 1);
-    box-shadow:  2px 2px 4px rgba(12, 12, 12, 0.5);
+    box-shadow: 2px 2px 4px rgba(12, 12, 12, 0.5);
     transition: all 0.3s ease-in-out;
 }
 
 .tecnologia-item:hover {
-    background-color: rgba(255, 255, 255, 0.2) ;
+    background-color: rgba(255, 255, 255, 0.2);
     transform: scale(1.05) translate3d(0, -5px, 0);
     box-shadow: 4px 4px 8px rgba(12, 12, 12, 0.5);
 }
 
-.tecnologia-item p{
+.tecnologia-item p {
     font-size: 32px;
     font-family: 'Poppins', sans-serif;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 450px;
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+#projects h2 {
+    color: #121212;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
+#projects i {
+    color: #006eff;
+    font-size: 50px;
 }
