@@ -7,9 +7,12 @@
 }
 
 html {
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -18,9 +21,8 @@ body {
     background-color: rgb(0, 0, 0);
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +37,7 @@ body {
     background-image: var(--diagonal-gradient-3);
     color: #fff;
     text-align: center;
-    width: 100%vh;
+    width: 100%;
     height: 70vh;
 }
 
@@ -106,40 +108,52 @@ body {
     justify-content: center;
     width: 100%;
     height: auto;
+    padding: 50px 0;
     background-image: var(--diagonal-gradient-2);
 }
 
 #tecnologias h2 {
     font-size: 50px;
     font-weight: 700;
-    margin: 50px 0;
-
+    margin: 0 0 30px 0;
 }
 
-.tecnologias-items {
+.tecnologia-items {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     width: 100%;
-    padding: 20px;
 }
 
-.tecnologias-item i {
+
+
+i {
     color: #fff;
     font-size: 50px;
-    margin: 10px;
 }
 
 .tecnologia-item {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    min-width: 150px;
+    height: 120px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow:  2px 2px 4px rgba(12, 12, 12, 0.5);
     transition: all 0.3s ease-in-out;
+}
+
+.tecnologia-item:hover {
+    background-color: rgba(255, 255, 255, 0.2) ;
+    transform: scale(1.05) translate3d(0, -5px, 0);
+    box-shadow: 4px 4px 8px rgba(12, 12, 12, 0.5);
+}
+
+.tecnologia-item p{
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
 }
