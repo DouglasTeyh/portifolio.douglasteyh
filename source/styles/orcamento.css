@@ -206,6 +206,29 @@ select option {
     background: linear-gradient(45deg, #e100ff, #7f00ff);
 }
 
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1.5px solid #7f00ff;
+    padding: 12px 40px 12px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    background-image: url("data:image/svg+xml;charset=UTF-8,<svg width='16' height='16' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M4 6l4 4 4-4'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px 18px;
+}
+
+select:focus {
+    border-color: #ff0066;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(127,0,255,0.2);
+}
 @media (max-width: 600px) {
     header h1 {
         font-size: 32px;
