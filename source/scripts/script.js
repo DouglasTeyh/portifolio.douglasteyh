@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     link.textContent = "Voltar";
                     link.href = "index.html";
                 } else {
-                    link.textContent = "Fazer Orçamento";
+                    link.textContent = "Orçamentos";
                     link.href = "orcamento.html";
                 }
             }
