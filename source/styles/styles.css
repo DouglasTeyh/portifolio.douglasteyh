@@ -269,6 +269,9 @@ footer p {
         width: 200px;
         font-size: 16px;
     }
+    #btn-ver-projects:hover {
+        width: 280px;
+    }
     #tecnologias h2,
     #projects h2 {
         font-size: 30px;
