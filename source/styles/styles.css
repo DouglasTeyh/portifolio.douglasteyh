@@ -291,6 +291,13 @@ footer p {
     .tecnologia-item {
         width: 90%;
     }
+
+    .area-projetos {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+
+    }
 }
 
 @media (max-width: 400px) {
