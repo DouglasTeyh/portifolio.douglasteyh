@@ -120,7 +120,7 @@ body {
 #tecnologias h2 {
     font-size: 50px;
     font-weight: 700;
-    margin: 0 0 30px 0;
+    margin: 0 0 60px 0;
 }
 
 .tecnologia-items {
@@ -131,8 +131,6 @@ body {
     gap: 10px;
     width: 100%;
 }
-
-
 
 .tecnologia-item i {
     color: #fff;
@@ -178,10 +176,74 @@ body {
     color: #121212;
     font-size: 50px;
     font-weight: 700;
-    margin: 0 0 30px 0;
+    margin: 60px 0 30px 0;
 }
 
 #projects i {
     color: #006eff;
     font-size: 50px;
+}
+
+.area-projetos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    margin: 10px 0;
+}
+
+.area-projetos a {
+    text-decoration: none;
+}
+
+.area-projetos a:hover {
+    transform: scale3d(1.5em);
+    transition: all 0.3s ease-in-out;
+}
+
+.projeto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 480px;
+    border: 1px solid rgba(18, 18, 18, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.projeto:hover {
+    background-color: rgba(18, 18, 18, 0.05);
+    transform: scale(1.05) translate3d(0, -5px, 0);
+    box-shadow: 4px 4px 8px rgba(12, 12, 12, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.projeto .image-project{
+    width: 480px;
+    height: 290px;
+    border-radius: 15px 15px 0 0;
+    overflow-x: hidden;
+}
+
+.texto-project {
+    padding: 20px;
+        align-items: left;
+}
+
+.texto-project h3 {
+    color: #121212;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.texto-project p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+    flex-wrap: wrap;
 }
