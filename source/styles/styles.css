@@ -208,22 +208,102 @@ h1, h2, h3, h4, h5, h6, p, span {
 footer {
     background-color: #121212;
     color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-footer h2 {
-    font-size: 24px;
+footer .final h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+    animation: pulse 2s infinite;
 }
 
-footer .strong {
-    display: inline-block;
+footer .final h2 .strong {
+    background-image: var(--diagonal-gradient);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.footer-content h2 {
+    font-size: 28px;
+    margin: 5px 0;
+}
+
+.footer-content .strong {
+    background-image: var(--diagonal-gradient);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 24px;
+    margin: 20px 0;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    animation: shake 2.5s ease-in-out infinite;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-whatsapp i {
+    font-size: 22px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5b;
+    transform: scale(1.05);
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff0066;
+    transform: translateY(-3px);
 }
 
 footer p {
-    margin-top: 10px;
+    margin-top: 20px;
     font-size: 14px;
+    color: #aaa;
 }
+
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0); }
+    10% { transform: translate(-2px, 0) rotate(-2deg); }
+    20% { transform: translate(2px, 0) rotate(2deg); }
+    30% { transform: translate(-2px, 0) rotate(-2deg); }
+    40% { transform: translate(2px, 0) rotate(2deg); }
+    50% { transform: translate(-1px, 0) rotate(-1deg); }
+    60% { transform: translate(1px, 0) rotate(1deg); }
+    70% { transform: translate(-1px, 0) rotate(-1deg); }
+    80% { transform: translate(1px, 0) rotate(1deg); }
+    90% { transform: translate(0, 0) rotate(0); }
+    100% { transform: translate(0, 0) rotate(0); }
+}
+
 
 @media (max-width: 1200px) {
     .conteudo-principal h1 {
@@ -252,6 +332,9 @@ footer p {
 }
 
 @media (max-width: 600px) {
+    .cabeçalho {
+        height: 50vh;
+    }
     .conteudo-principal span {
         font-size: 12px;
         letter-spacing: 1px;
@@ -298,6 +381,15 @@ footer p {
         align-items: center;
         gap: 0px;
 
+    }
+
+        .footer-content h2 {
+        font-size: 20px;
+    }
+
+    .btn-whatsapp {
+        padding: 10px 20px;
+        font-size: 16px;
     }
 }
 
