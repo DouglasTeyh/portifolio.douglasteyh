@@ -1,36 +1,134 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="source/styles/styles.css">
     <link rel="stylesheet" href="source/styles/orcamento.css">
-    <title>Orçamento - Douglas Teyh</title>
+    <title>Orçamento de Criação de Site</title>
 </head>
 
 <body>
-<div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder"></div>
 
-<body>
+    <header class="header">
+        <h1>Solicite seu <span class="gradient">Orçamento</span></h1>
+        <p>Preencha os dados abaixo e receba uma estimativa</p>
+    </header>
 
-    <form action="https://formsubmit.co/contato.douglasteyh@gmail.com" method="POST">
-        <h2>Fale Conosco</h2>
+    <section class="form-section">
+        <form action="https://formsubmit.co/contato.douglasteyh@gmail.com" method="POST">
 
-        <label>Nome:</label>
-        <input type="text" name="nome" required>
+            <div class="form-group">
+                <label>Nome</label>
+                <input type="text" name="nome" required>
+            </div>
 
-        <label>Email:</label>
-        <input type="email" name="email" required>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
 
-        <label>Mensagem:</label>
-        <textarea name="mensagem" rows="5" required></textarea>
+            <div class="form-group">
+                <label>Telefone/WhatsApp</label>
+                <input type="text" name="telefone">
+            </div>
 
-        <button type="submit">Enviar</button>
+            <div class="form-group">
+                <label>Tipo de serviço</label>
+                <select name="servico" required>
+                    <option value="Criar um site do zero">Criar um site do zero</option>
+                    <option value="Editar ou atualizar meu site">Editar ou atualizar meu site</option>
+                    <option value="Manutenção ou suporte mensal">Manutenção ou suporte mensal</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
 
-        <!-- Proteções e opções -->
-        <input type="hidden" name="_captcha" value="false">
-    </form>
+            <div class="form-group">
+                <label>Quantas páginas terá?</label>
+                <input type="number" name="paginas" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label>Funcionalidades extras</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Formulário de Contato">
+                        <label>Formulário de Contato</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Galeria de Imagens">
+                        <label>Galeria de Imagens</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Blog/Artigos">
+                        <label>Blog/Artigos</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Chat WhatsApp">
+                        <label>Chat WhatsApp</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Loja Virtual">
+                        <label>Loja Virtual</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Área de Membros">
+                        <label>Área de Membros</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="funcionalidades[]" value="Outros">
+                        <label>Outros</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Possui domínio e hospedagem?</label>
+                <select name="dominio_hospedagem">
+                    <option value="Sim, já possuo">Sim, já possuo</option>
+                    <option value="Não, preciso de ajuda com isso">Não, preciso de ajuda com isso</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tem preferência de tecnologias?</label>
+                <select name="tecnologia">
+                    <option value="Não sei / Pode escolher a melhor">Não sei / Pode escolher a melhor</option>
+                    <option value="HTML, CSS, JavaScript puro">HTML, CSS, JavaScript puro</option>
+                    <option value="WordPress">WordPress</option>
+                    <option value="React JS">React JS</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Descreva um pouco mais sobre seu projeto</label>
+                <textarea name="descricao" rows="5"
+                    placeholder="Conte mais detalhes, referências ou dúvidas..."></textarea>
+            </div>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="valor_estimado" id="valor_estimado" value="">
+
+
+            <button type="submit" class="btn-submit">Solicitar Orçamento</button>
+        </form>
+    </section>
+
+    <div id="modal-sucesso" class="modal-sucesso">
+        <div class="modal-conteudo">
+            <i class="fa-solid fa-circle-check fa-4x" style="color: #34d399;"></i>
+            <p>Seu Orçamento foi enviado com Sucesso!</p>
+            <button id="btn-voltar" class="btn-voltar">Voltar</button>
+        </div>
+    </div>
+
+
 </body>
 <script src="source/scripts/script.js"></script>
-</html> 
+<script src="source/scripts/orcamento.js"></script>
+
+</html>
