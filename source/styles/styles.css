@@ -284,6 +284,7 @@ footer p {
     }
     .projeto {
         width: 90%;
+        margin: 10px 0px;
     }
     .image-project {
         height: 180px;
