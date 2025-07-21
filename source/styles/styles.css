@@ -152,6 +152,7 @@ h1, h2, h3, h4, h5, h6, p, span {
     color: #121212;
     text-align: center;
     padding: 60px 20px;
+    height: auto;
 }
 
 #projects h2 {
@@ -370,7 +371,7 @@ footer p {
         margin: 10px 0px;
     }
     .image-project {
-        height: 180px;
+        height: 240px;
     }
     .tecnologia-item {
         width: 90%;
