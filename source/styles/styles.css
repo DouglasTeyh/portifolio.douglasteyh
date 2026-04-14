@@ -30,7 +30,14 @@ a {
     color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
     word-wrap: break-word;
     word-break: break-word;
 }
@@ -88,9 +95,12 @@ h1, h2, h3, h4, h5, h6, p, span {
 }
 
 @keyframes flutuar {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -182,7 +192,7 @@ h1, h2, h3, h4, h5, h6, p, span {
 
 .projeto:hover {
     transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .image-project {
@@ -203,6 +213,7 @@ h1, h2, h3, h4, h5, h6, p, span {
 
 .texto-project p {
     font-size: 16px;
+    line-height: 1.5;
     color: #666;
 }
 
@@ -229,9 +240,17 @@ footer .final h2 .strong {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .footer-content h2 {
@@ -292,17 +311,49 @@ footer p {
 }
 
 @keyframes shake {
-    0% { transform: translate(0, 0) rotate(0); }
-    10% { transform: translate(-2px, 0) rotate(-2deg); }
-    20% { transform: translate(2px, 0) rotate(2deg); }
-    30% { transform: translate(-2px, 0) rotate(-2deg); }
-    40% { transform: translate(2px, 0) rotate(2deg); }
-    50% { transform: translate(-1px, 0) rotate(-1deg); }
-    60% { transform: translate(1px, 0) rotate(1deg); }
-    70% { transform: translate(-1px, 0) rotate(-1deg); }
-    80% { transform: translate(1px, 0) rotate(1deg); }
-    90% { transform: translate(0, 0) rotate(0); }
-    100% { transform: translate(0, 0) rotate(0); }
+    0% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    10% {
+        transform: translate(-2px, 0) rotate(-2deg);
+    }
+
+    20% {
+        transform: translate(2px, 0) rotate(2deg);
+    }
+
+    30% {
+        transform: translate(-2px, 0) rotate(-2deg);
+    }
+
+    40% {
+        transform: translate(2px, 0) rotate(2deg);
+    }
+
+    50% {
+        transform: translate(-1px, 0) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(1px, 0) rotate(1deg);
+    }
+
+    70% {
+        transform: translate(-1px, 0) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(1px, 0) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0);
+    }
 }
 
 
@@ -310,6 +361,7 @@ footer p {
     .conteudo-principal h1 {
         font-size: 80px;
     }
+
     #tecnologias h2,
     #projects h2 {
         font-size: 40px;
@@ -320,13 +372,16 @@ footer p {
     .conteudo-principal h1 {
         font-size: 60px;
     }
+
     #btn-ver-projects {
         width: 250px;
         font-size: 20px;
     }
+
     .projeto {
         width: 320px;
     }
+
     .image-project {
         height: 200px;
     }
@@ -336,43 +391,54 @@ footer p {
     .cabeçalho {
         height: 50vh;
     }
+
     .conteudo-principal span {
         font-size: 12px;
         letter-spacing: 1px;
         margin: 0 0 10px;
     }
+
     .conteudo-principal h1 {
         font-size: 52px;
         width: 100%;
     }
+
     .conteudo-principal {
         align-items: center;
         padding: 10px;
     }
+
     #btn-ver-projects {
         width: 200px;
         font-size: 16px;
     }
+
     #btn-ver-projects:hover {
         width: 280px;
     }
+
     #tecnologias h2,
     #projects h2 {
         font-size: 30px;
     }
+
     .texto-project h3 {
         font-size: 20px;
     }
+
     .texto-project p {
         font-size: 14px;
     }
+
     .projeto {
         width: 90%;
         margin: 10px 0px;
     }
+
     .image-project {
         height: 240px;
     }
+
     .tecnologia-item {
         width: 90%;
     }
@@ -384,7 +450,7 @@ footer p {
 
     }
 
-        .footer-content h2 {
+    .footer-content h2 {
         font-size: 20px;
     }
 
@@ -398,6 +464,7 @@ footer p {
     .conteudo-principal h1 {
         font-size: 32px;
     }
+
     #btn-ver-projects {
         width: 150px;
         font-size: 14px;
