@@ -8,129 +8,331 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="source/styles/styles.css">
-    <title>Portifólio - Douglas Teyh</title>
+    <title>Portfólio - Douglas Tranquilino</title>
 </head>
 
 <body>
-    <div id="navbar-placeholder"></div>
+    <div class="epic-dev-container">
 
-    <div class="cabeçalho">
-        <div class="conteudo-principal">
-            <span>EAI? MEU NOME É <strong class="strong">DOUGLAS</strong> E ESSE É O MEU</span>
-            <h1>PORTIFÓLIO<strong class="strong">!</strong></h1>
-            <a href="#projects"><button id="btn-ver-projects" type="button">VER PROJETOS</button></a>
+        <div class="epic-glow-bg"></div>
+
+        <!-- 1. Hero Section (Contida) -->
+        <div class="container container-large">
+            <section class="epic-hero-section">
+                <div class="epic-hero-left">
+                    <div class="epic-image-wrapper gs-reveal-hero">
+                        <div class="epic-image-glow"></div>
+                        <div class="orbital-ring"></div>
+                        <img src="https://avatars.githubusercontent.com/u/170581948?v=4" alt="Douglas Tranquilino"
+                            class="epic-profile-img" crossorigin="anonymous">
+                    </div>
+                </div>
+
+                <div class="epic-hero-right">
+                    <div class="hero-text-mask">
+                        <span class="epic-tag gs-reveal-text">DEV FULLSTACK & IA RESEARCHER</span>
+                    </div>
+                    <div class="hero-text-mask">
+                        <h1 class="epic-title gs-reveal-text">Douglas <br>Tranquilino</h1>
+                    </div>
+                    <div class="hero-text-mask">
+                        <p class="epic-subtitle gs-reveal-text">
+                            Conectando Engenharia de Software robusta com Ciência de Dados aplicada e Design Criativo. Foco
+                            no desenvolvimento tecnológico com impacto real.
+                        </p>
+                    </div>
+
+                    <div class="epic-action-group gs-reveal-hero-btn">
+                        <a href="#projects" class="epic-btn epic-btn-primary">
+                            <span>Ver Projetos</span> <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="orcamento.html" class="epic-btn epic-btn-secondary">
+                            <span>Fazer Orçamento</span> <i class="fa-solid fa-calculator"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dev-scroll-indicator gs-reveal-hero-btn">
+                <span class="scroll-mouse"></span>
+                <span class="scroll-text">ROLE A TELA</span>
+            </div>
         </div>
+
+        <!-- 2. Trajetória (Contida) -->
+        <div class="container container-large epic-section-spacing">
+            <div class="epic-glass-panel gs-reveal-up">
+                <div class="glass-panel-content">
+                    <div class="glass-icon-header"><i class="fa-solid fa-graduation-cap"></i> Trajetória & Visão</div>
+                    <h2 class="glass-title">Carreira Acadêmica</h2>
+                    <p class="glass-text">
+                        Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> no Instituto Federal de
+                        Pernambuco (IFPE), campus Palmares. Minha jornada é guiada pela paixão em extrair de dados
+                        complexos, soluções computacionais eficientes.
+                    </p>
+                    <p class="glass-text">
+                        Como desenvolvedor Full Stack, construo pontes entre o back-end estável e interfaces front-end
+                        performáticas. Como Bolsista PIBIC de Pesquisa Científica, exploro os limites da Inteligência
+                        Artificial em soluções de Saúde (Healthcare IoT), aplicando a ciência em cenários onde precisão
+                        é vital.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Destaque Científico (Contida) -->
+        <div class="container container-large epic-section-spacing">
+            <div class="epic-showcase-panel gs-reveal-up">
+                <div class="showcase-content">
+                    <span class="showcase-badge">DESTAQUE CIENTÍFICO</span>
+                    <h2 class="showcase-title">BSB 2025 - Simpósio Brasileiro de Bioinformática</h2>
+                    <h3 class="showcase-subtitle">"Development of Predictive Models with Random Forest and XGBoost for
+                        Risk Stratification in Stroke Patients"</h3>
+                    <p class="showcase-desc">
+                        Apresentação de pesquisa no <i>XVIII Brazilian Symposium on Bioinformatics</i>. O trabalho
+                        focou no desenvolvimento de inteligência computacional para a área da saúde.
+                    </p>
+                    <div style="margin-top: 20px; margin-bottom: 25px;">
+                        <a href="https://sol.sbc.org.br/index.php/bsb/article/view/41386" target="_blank" class="epic-btn epic-btn-primary">
+                            <span>Acessar Artigo</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                    <div class="showcase-tags">
+                        <span><i class="fa-solid fa-brain"></i> Machine Learning</span>
+                        <span><i class="fa-solid fa-network-wired"></i> Algoritmos XGBoost</span>
+                        <span><i class="fa-solid fa-tree"></i> Random Forest</span>
+                    </div>
+                </div>
+                <div class="showcase-visual magnetic-hover">
+                    <i class="fa-solid fa-microscope showcase-icon-large"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Projetos (Contida) -->
+        <section id="projects" class="container container-large epic-projects-section epic-section-spacing">
+            <div class="hero-text-mask" style="text-align: center; margin-bottom: 50px; justify-content: center;">
+                <h2 class="epic-section-title gs-reveal-text">Projetos Feitos</h2>
+            </div>
+
+            <div class="epic-projects-grid">
+                <!-- Projeto 1: ERBASE 2026 -->
+                <a href="https://erbase.sbc.org.br/2026/" target="_blank" class="epic-project-card">
+                    <div class="epic-project-image-wrapper">
+                        <img src="source/img/erbase2026.png" alt="ERBASE 2026" class="epic-project-image">
+                    </div>
+                    <div class="epic-project-content">
+                        <h3 class="epic-project-title">ERBASE 2026 - Maragogi</h3>
+                        <p class="epic-project-desc">Site oficial do principal evento de computação da SBC no Nordeste, construído com foco em design de alta fidelidade e interações fluidas.</p>
+                        <div class="epic-project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>GSAP</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projeto 2: IoT Hospitalar -->
+                <a href="https://iothospitalar.palmares.ifpe.edu.br" target="_blank" class="epic-project-card">
+                    <div class="epic-project-image-wrapper">
+                        <img src="source/img/iot-site.png" alt="IoT Hospitalar" class="epic-project-image">
+                    </div>
+                    <div class="epic-project-content">
+                        <h3 class="epic-project-title">IoT Hospitalar</h3>
+                        <p class="epic-project-desc">Portal voltado para a divulgação de pesquisas acadêmicas, artigos científicos e ferramentas práticas integrando Internet das Coisas na saúde.</p>
+                        <div class="epic-project-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projeto 3: APAE - SysWeb -->
+                <a href="https://ads3-manha-apae-1.onrender.com/" target="_blank" class="epic-project-card">
+                    <div class="epic-project-image-wrapper">
+                        <img src="source/img/apae-site.png" alt="APAE - SysWeb" class="epic-project-image">
+                    </div>
+                    <div class="epic-project-content">
+                        <h3 class="epic-project-title">APAE - SysWeb</h3>
+                        <p class="epic-project-desc">Sistema web completo desenvolvido para facilitar a gestão operacional, controle de atendimentos e apoio psicossocial da APAE.</p>
+                        <div class="epic-project-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>CSS3</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projeto 4: TrackMAIL -->
+                <a href="https://trackmailproject.vercel.app/" target="_blank" class="epic-project-card">
+                    <div class="epic-project-image-wrapper">
+                        <img src="source/img/trackmail-site.png" alt="TrackMAIL" class="epic-project-image">
+                    </div>
+                    <div class="epic-project-content">
+                        <h3 class="epic-project-title">TrackMAIL</h3>
+                        <p class="epic-project-desc">Painel inovador para monitoramento e gestão automatizada de correspondências e encomendas postais em tempo real.</p>
+                        <div class="epic-project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>JavaScript</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. Tecnologias (Marquee Full-Width, Título Contido) -->
+        <section class="epic-section-spacing" style="width: 100%;">
+            <div class="container container-large">
+                <div class="hero-text-mask" style="text-align: center; margin-bottom: 40px; justify-content: center;">
+                    <h2 class="epic-section-title gs-reveal-text">Tecnologias</h2>
+                </div>
+            </div>
+
+            <div class="tech-marquee-wrapper gs-reveal-up">
+                <div class="tech-marquee-track">
+                    <div class="tech-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+                    <div class="tech-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                    <div class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+                    <div class="tech-item"><i class="fa-solid fa-chart-simple"></i> Chart.js</div>
+                    <div class="tech-item"><i class="fa-brands fa-vuejs"></i> Vue.js</div>
+                    <div class="tech-item"><i class="fa-brands fa-angular"></i> Angular</div>
+                    <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                    <div class="tech-item"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
+                    <div class="tech-item"><i class="fa-brands fa-node-js"></i> Node.js</div>
+                    <div class="tech-item"><i class="fa-brands fa-java"></i> Java</div>
+                    <div class="tech-item"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
+                    <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="tech-item"><i class="fa-solid fa-pepper-hot"></i> Flask</div>
+                    <div class="tech-item"><i class="fa-solid fa-project-diagram"></i> KNN</div>
+                    <div class="tech-item"><i class="fa-solid fa-tree"></i> Random Forest</div>
+                    <div class="tech-item"><i class="fa-solid fa-brain"></i> Scikit-Learn</div>
+                    <div class="tech-item"><i class="fa-solid fa-bolt"></i> XGBoost</div>
+                    <div class="tech-item"><i class="fa-solid fa-cube"></i> TensorFlow</div>
+                    <div class="tech-item"><i class="fa-solid fa-layer-group"></i> Keras</div>
+                    <div class="tech-item"><i class="fa-solid fa-fire"></i> PyTorch</div>
+                    <div class="tech-item"><i class="fa-solid fa-table"></i> Pandas</div>
+                    <div class="tech-item"><i class="fa-solid fa-hashtag"></i> NumPy</div>
+                    <div class="tech-item"><i class="fa-solid fa-chart-pie"></i> Matplotlib</div>
+                    <div class="tech-item"><i class="fa-solid fa-chart-line"></i> Seaborn</div>
+                    <div class="tech-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+                    <div class="tech-item"><i class="fa-solid fa-crosshairs"></i> YOLO</div>
+                    <div class="tech-item"><i class="fa-solid fa-c"></i> C++</div>
+                    <div class="tech-item"><i class="fa-solid fa-microchip"></i> Arduino IDE</div>
+                    <div class="tech-item"><i class="fa-solid fa-database"></i> MySQL</div>
+                    <div class="tech-item"><i class="fa-solid fa-database"></i> SQLite</div>
+                    <div class="tech-item"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                    <div class="tech-item"><i class="fa-solid fa-server"></i> Firebase</div>
+                    <div class="tech-item"><i class="fa-solid fa-image"></i> Photoshop</div>
+                    <div class="tech-item"><i class="fa-solid fa-video"></i> Premiere</div>
+                    <div class="tech-item"><i class="fa-solid fa-film"></i> After Effects</div>
+                    <div class="tech-item"><i class="fa-brands fa-figma"></i> Figma</div>
+                    <div class="tech-item"><i class="fa-solid fa-palette"></i> Canvas</div>
+
+                    <!-- Repetição do Marquee para loop infinito contínuo -->
+                    <div class="tech-item"><i class="fa-brands fa-html5"></i> HTML5</div>
+                    <div class="tech-item"><i class="fa-brands fa-css3-alt"></i> CSS3</div>
+                    <div class="tech-item"><i class="fa-brands fa-js"></i> JavaScript</div>
+                    <div class="tech-item"><i class="fa-solid fa-chart-simple"></i> Chart.js</div>
+                    <div class="tech-item"><i class="fa-brands fa-vuejs"></i> Vue.js</div>
+                    <div class="tech-item"><i class="fa-brands fa-angular"></i> Angular</div>
+                    <div class="tech-item"><i class="fa-brands fa-react"></i> React</div>
+                    <div class="tech-item"><i class="fa-solid fa-mobile-screen"></i> Flutter</div>
+                    <div class="tech-item"><i class="fa-brands fa-node-js"></i> Node.js</div>
+                    <div class="tech-item"><i class="fa-brands fa-java"></i> Java</div>
+                    <div class="tech-item"><i class="fa-solid fa-leaf"></i> Spring Boot</div>
+                    <div class="tech-item"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="tech-item"><i class="fa-solid fa-pepper-hot"></i> Flask</div>
+                    <div class="tech-item"><i class="fa-solid fa-project-diagram"></i> KNN</div>
+                    <div class="tech-item"><i class="fa-solid fa-tree"></i> Random Forest</div>
+                    <div class="tech-item"><i class="fa-solid fa-brain"></i> Scikit-Learn</div>
+                    <div class="tech-item"><i class="fa-solid fa-bolt"></i> XGBoost</div>
+                    <div class="tech-item"><i class="fa-solid fa-cube"></i> TensorFlow</div>
+                    <div class="tech-item"><i class="fa-solid fa-layer-group"></i> Keras</div>
+                    <div class="tech-item"><i class="fa-solid fa-fire"></i> PyTorch</div>
+                    <div class="tech-item"><i class="fa-solid fa-table"></i> Pandas</div>
+                    <div class="tech-item"><i class="fa-solid fa-hashtag"></i> NumPy</div>
+                    <div class="tech-item"><i class="fa-solid fa-chart-pie"></i> Matplotlib</div>
+                    <div class="tech-item"><i class="fa-solid fa-chart-line"></i> Seaborn</div>
+                    <div class="tech-item"><i class="fa-solid fa-eye"></i> OpenCV</div>
+                    <div class="tech-item"><i class="fa-solid fa-crosshairs"></i> YOLO</div>
+                    <div class="tech-item"><i class="fa-solid fa-c"></i> C++</div>
+                    <div class="tech-item"><i class="fa-solid fa-microchip"></i> Arduino IDE</div>
+                    <div class="tech-item"><i class="fa-solid fa-database"></i> MySQL</div>
+                    <div class="tech-item"><i class="fa-solid fa-database"></i> SQLite</div>
+                    <div class="tech-item"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                    <div class="tech-item"><i class="fa-solid fa-server"></i> Firebase</div>
+                    <div class="tech-item"><i class="fa-solid fa-image"></i> Photoshop</div>
+                    <div class="tech-item"><i class="fa-solid fa-video"></i> Premiere</div>
+                    <div class="tech-item"><i class="fa-solid fa-film"></i> After Effects</div>
+                    <div class="tech-item"><i class="fa-brands fa-figma"></i> Figma</div>
+                    <div class="tech-item"><i class="fa-solid fa-palette"></i> Canvas</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Contatos (Contida) -->
+        <section class="container container-large epic-section-spacing" style="margin-bottom: 40px;">
+            <div class="hero-text-mask" style="text-align: center; margin-bottom: 40px; justify-content: center;">
+                <h2 class="epic-section-title gs-reveal-text">Vamos Conversar?</h2>
+            </div>
+
+            <div class="epic-social-grid">
+                <a href="https://wa.me/5581993226699" target="_blank"
+                    class="epic-social-card whatsapp gs-reveal-stagger">
+                    <div class="social-card-inner">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/douglasteyh/" target="_blank"
+                    class="epic-social-card linkedin gs-reveal-stagger">
+                    <div class="social-card-inner">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </div>
+                </a>
+                <a href="https://github.com/DouglasTeyh" target="_blank"
+                    class="epic-social-card github gs-reveal-stagger">
+                    <div class="social-card-inner">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/douglasteyh/" target="_blank"
+                    class="epic-social-card instagram gs-reveal-stagger">
+                    <div class="social-card-inner">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>Instagram</span>
+                    </div>
+                </a>
+                <a href="mailto:contato.douglasteyh@gmail.com" class="epic-social-card envelope gs-reveal-stagger">
+                    <div class="social-card-inner">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>E-mail</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- 7. Footer (Contido) -->
+        <footer class="epic-footer container container-large">
+            <div class="epic-footer-divider"></div>
+            <p>© 2026 Douglas Teyh. Todos os direitos reservados.</p>
+        </footer>
+
     </div>
 
-    <div id="tecnologias">
-        <h2>TECNOLOGIAS</h2>
-        <div class="tecnologia-items">
-            <div class="tecnologia-item">
-                <i class="fa-brands fa-html5"></i>
-                <p>HTML</p>
-            </div>
-            <div class="tecnologia-item">
-                <i class="fa-brands fa-css3-alt"></i>
-                <p>CSS</p>
-            </div>
-            <div class="tecnologia-item">
-                <i class="fa-brands fa-js"></i>
-                <p>Javascript</p>
-            </div>
-            <div class="tecnologia-item">
-                <i class="fa-solid fa-pepper-hot"></i>
-                <p>Flask</p>
-            </div>
-            <div class="tecnologia-item">
-                <i class="fa-solid fa-leaf"></i>
-                <p>Springboot</p>
-            </div>
-            <div class="tecnologia-item">
-                <i class="fa-solid fa-database"></i>
-                <p>SQLite</p>
-            </div>
-            <div class="tecnologia-item">
-                <i class="fa-brands fa-figma"></i>
-                <p>Figma</p>
-            </div>
-        </div>
-    </div>
-
-    <section id="projects">
-        <h2>PROJETOS <strong class="strong"> FEITOS</strong> <i class="fa-solid fa-circle-check"></i></h2>
-
-        <div class="area-projetos">
-
-            <a href="https://erbase.sbc.org.br/2026/" target="_blank">
-                <div class="projeto">
-                    <img class="image-project" src="source/img/erbase2026.png" alt="">
-
-                    <div class="texto-project">
-                        <h3>ERBASE 2026 - Edição Maragogi</h3>
-                        <p>SITE OFICIAL do evento da ERBASE pela SBC (Sociedade Brasileira de Computação)</p>
-                        <a href=""></a>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://iothospitalar.palmares.ifpe.edu.br" target="_blank">
-                <div class="projeto">
-                    <img class="image-project" src="source/img/iot-site.png" alt="">
-
-                    <div class="texto-project">
-                        <h3>IoT Hospitalar</h3>
-                        <p>Site para publicação de artigos e ferramentas de IoT.</p>
-                        <a href=""></a>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://ads3-manha-apae-1.onrender.com/" target="_blank">
-                <div class="projeto">
-                    <img class="image-project" src="source/img/apae-site.png" alt="">
-
-                    <div class="texto-project">
-                        <h3>APAE - SysWeb</h3>
-                        <p>Site para apoio à pessoas excepcionais.</p>
-                        <a href=""></a>
-                    </div>
-                </div>
-            </a>
-
-            <a href="https://trackmailproject.vercel.app/" target="_blank">
-                <div class="projeto">
-                    <img class="image-project" src="source/img/trackmail-site.png" alt="">
-
-                    <div class="texto-project">
-                        <h3>TrackMAIL - Rastreio e Gerenciamento</h3>
-                        <p>Site para rastreamento e gerenciamento de encomendas.</p>
-                        <a href=""></a>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </section>
-    <footer>
-        <div class="footer-content">
-            <div class="final">
-                <h2>Precisa de alguém para</h2>
-                <h2><strong class="strong">Desenvolver seu Projeto?</strong></h2>
-            </div>
-            <a class="btn-whatsapp"
-                href="https://wa.me/5581993226699?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20um%20site%20profissional.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F"
-                target="_blank">
-                <i class="fa-brands fa-whatsapp"></i> Fale comigo no WhatsApp
-            </a>
-            <div class="social-icons">
-                <a href="https://github.com/douglasteyh" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/douglasteyh" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-            <p>© 2025 Douglas Teyh. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-
+    <!-- GSAP & ScrollTrigger de CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="source/scripts/script.js"></script>
 </body>
-<script src="source/scripts/script.js"></script>
 
 </html>

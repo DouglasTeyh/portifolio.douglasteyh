@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
 
 :root {
-    --diagonal-gradient: linear-gradient(45deg, #3700c3, #ff0066);
-    --diagonal-gradient-2: linear-gradient(45deg, #8500c3, #ff0000);
-    --diagonal-gradient-3: linear-gradient(180deg, #00000000, #121212);
+    --primary-neon: #ff0066; /* Magenta */
+    --primary-rgb: 255, 0, 102;
+    --secondary-neon: #7f00ff; /* Roxo */
+    --secondary-rgb: 127, 0, 255;
+    --bg-dark: #121212;
 }
 
 * {
@@ -16,13 +18,20 @@ html {
     scroll-behavior: smooth;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: scroll; /* Previne tremor de scrollbar lateral */
 }
 
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--bg-dark);
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
     width: 100%;
+    overflow-x: hidden;
+}
+
+/* Otimização de renderização de hardware para elementos animados */
+.gs-reveal-up, .gs-reveal-stagger, .gs-reveal-hero {
+    will-change: transform, opacity;
 }
 
 a {
@@ -42,431 +51,895 @@ span {
     word-break: break-word;
 }
 
-
 ::-webkit-scrollbar {
-    display: none;
+    width: 8px;
 }
 
-.cabeçalho {
-    background-image: var(--diagonal-gradient-3);
-    text-align: center;
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-neon);
+}
+
+/* --- CLASSES DE LAYOUT PRINCIPAIS --- */
+.container {
     width: 100%;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 
-.conteudo-principal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: flutuar 3s ease-in-out infinite;
+.container-large {
+    max-width: 1100px;
 }
 
-.conteudo-principal span {
-    font-size: 16px;
-    letter-spacing: 4px;
-}
-
-.conteudo-principal h1 {
-    font-size: 120px;
-    font-weight: 700;
-}
-
-#btn-ver-projects {
-    background-image: var(--diagonal-gradient-2);
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 26px;
-    font-weight: 600;
-    padding: 10px 20px;
-    width: 300px;
-    margin-top: 20px;
-    transition: all 0.3s ease-in-out;
-}
-
-#btn-ver-projects:hover {
-    border-radius: 100px;
-    width: 600px;
-    background-image: var(--diagonal-gradient);
-    transform: scale(1.05);
-}
-
-@keyframes flutuar {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-.strong {
-    color: #fff;
-    background-image: var(--diagonal-gradient);
-    padding: 5px 10px;
-    border-radius: 0 5px 5px 0;
-}
-
-#tecnologias {
-    background-image: var(--diagonal-gradient-2);
-    text-align: center;
-    padding: 60px 20px;
-}
-
-#tecnologias h2 {
-    font-size: 50px;
-    margin-bottom: 40px;
-}
-
-.tecnologia-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.tecnologia-item {
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    padding: 20px;
-    width: 150px;
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tecnologia-item i {
-    font-size: 50px;
-}
-
-.tecnologia-item p {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.tecnologia-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
-}
-
-#projects {
-    background-color: #fff;
-    color: #121212;
-    text-align: center;
-    padding: 60px 20px;
-    height: auto;
-}
-
-#projects h2 {
-    font-size: 50px;
-    margin-bottom: 40px;
-}
-
-#projects i {
-    color: #006eff;
-}
-
-.area-projetos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.projeto {
-    background-color: #fff;
-    border-radius: 15px;
-    border: 1px solid rgba(18, 18, 18, 0.1);
-    overflow: hidden;
-    transition: all 0.3s;
-    width: 480px;
-}
-
-.projeto:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.image-project {
+.epic-dev-container {
+    background: var(--bg-dark);
+    color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
     width: 100%;
-    height: 290px;
+}
+
+.epic-glow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 20%, rgba(var(--secondary-rgb, 127, 0, 255), 0.08) 0%, rgba(0, 0, 0, 0) 60%),
+                radial-gradient(circle at 80% 80%, rgba(var(--primary-rgb, 255, 0, 102), 0.05) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- HERO SECTION --- */
+.epic-hero-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 2;
+    margin: 40px auto 60px auto;
+    width: 100%;
+}
+
+.epic-hero-left {
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.epic-image-wrapper {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    visibility: hidden;
+}
+
+.epic-profile-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-.texto-project {
-    padding: 20px;
+.orbital-ring {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 1px dashed rgba(var(--primary-rgb, 255, 0, 102), 0.4);
+    border-radius: 50%;
+    animation: rotateRing 20s linear infinite;
+    z-index: 1;
+}
+
+.epic-image-glow {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    background: var(--secondary-neon);
+    filter: blur(50px);
+    opacity: 0.4;
+    border-radius: 50%;
+    z-index: 0;
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes rotateRing {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulseGlow {
+    to {
+        transform: scale(1.1);
+        opacity: 0.6;
+        background: var(--primary-neon);
+    }
+}
+
+.epic-hero-right {
+    text-align: left;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.hero-text-mask {
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.epic-tag {
+    display: inline-block;
+    color: var(--primary-neon);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    visibility: hidden;
+}
+
+.epic-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 30%, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    visibility: hidden;
     text-align: left;
 }
 
-.texto-project h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
+.epic-subtitle {
+    color: #aaa;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    visibility: hidden;
+    text-align: left;
 }
 
-.texto-project p {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666;
+.epic-action-group {
+    margin-top: 30px;
+    visibility: hidden;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
 }
 
-footer {
-    background-color: #121212;
-    color: #fff;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-footer .final h2 {
-    font-size: 28px;
-    font-weight: 900;
-    color: white;
-    animation: pulse 2s infinite;
-}
-
-footer .final h2 .strong {
-    background-image: var(--diagonal-gradient);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-.footer-content h2 {
-    font-size: 28px;
-    margin: 5px 0;
-}
-
-.footer-content .strong {
-    background-image: var(--diagonal-gradient);
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.btn-whatsapp {
+.epic-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: #25D366;
-    color: white;
-    padding: 12px 24px;
-    margin: 20px 0;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.epic-btn-primary {
+    background: #fff;
+    color: #000;
+}
+
+.epic-btn-primary:hover {
+    background: var(--primary-neon);
+    box-shadow: 0 10px 30px rgba(var(--primary-rgb, 0, 242, 165), 0.3);
+}
+
+.epic-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.epic-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- SEÇÕES E ESPAÇAMENTOS --- */
+.epic-section-spacing {
+    margin-top: 120px;
+    position: relative;
+    z-index: 2;
+}
+
+.epic-section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: #fff;
+    visibility: hidden;
+}
+
+.epic-glass-panel,
+.epic-showcase-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 50px;
+    visibility: hidden;
+    text-align: left;
+    width: 100%;
+}
+
+.epic-showcase-panel {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(var(--secondary-rgb, 0, 162, 213), 0.03), rgba(var(--primary-rgb, 0, 242, 165), 0.03));
+    border-color: rgba(var(--primary-rgb, 0, 242, 165), 0.15);
+}
+
+.glass-icon-header {
+    color: var(--secondary-neon);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.glass-title,
+.showcase-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.showcase-subtitle {
+    color: var(--primary-neon);
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.glass-text,
+.showcase-desc {
+    color: #bbb;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.showcase-badge {
+    background: var(--primary-neon);
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.showcase-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.showcase-tags span {
+    background: rgba(var(--primary-rgb, 0, 242, 165), 0.08);
+    color: var(--primary-neon);
+    padding: 8px 20px;
     border-radius: 50px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(var(--primary-rgb, 0, 242, 165), 0.35);
+    text-shadow: 0 0 10px rgba(var(--primary-rgb, 0, 242, 165), 0.2);
+}
+
+.showcase-icon-large {
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.02);
+    text-shadow: 0 0 50px rgba(var(--primary-rgb, 0, 242, 165), 0.15);
+    transition: all 0.5s ease;
+}
+
+.epic-showcase-panel:hover .showcase-icon-large {
+    color: rgba(var(--primary-rgb, 0, 242, 165), 0.1);
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* --- MARQUEE DE TECNOLOGIAS --- */
+.tech-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    visibility: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 150px, black calc(100% - 150px), transparent);
+    mask-image: linear-gradient(to right, transparent, black 150px, black calc(100% - 150px), transparent);
+}
+
+.tech-marquee-track {
+    display: flex;
+    width: fit-content;
+    animation: scrollMarquee 40s linear infinite;
+}
+
+.tech-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 40px;
+    margin: 0 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 100px;
+    font-size: 1.2rem;
     font-weight: 600;
-    font-size: 18px;
-    animation: shake 2.5s ease-in-out infinite;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #ccc;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
-.btn-whatsapp i {
-    font-size: 22px;
+.tech-item i {
+    font-size: 1.5rem;
+    color: var(--secondary-neon);
 }
 
-.btn-whatsapp:hover {
-    background-color: #1ebe5b;
-    transform: scale(1.05);
+.tech-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-5px);
 }
 
-.social-icons {
-    margin: 20px 0;
+.tech-item:hover i {
+    color: #fff;
 }
 
-.social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 24px;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #ff0066;
-    transform: translateY(-3px);
-}
-
-footer p {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #aaa;
-}
-
-@keyframes shake {
+@keyframes scrollMarquee {
     0% {
-        transform: translate(0, 0) rotate(0);
+        transform: translateX(0);
     }
-
-    10% {
-        transform: translate(-2px, 0) rotate(-2deg);
-    }
-
-    20% {
-        transform: translate(2px, 0) rotate(2deg);
-    }
-
-    30% {
-        transform: translate(-2px, 0) rotate(-2deg);
-    }
-
-    40% {
-        transform: translate(2px, 0) rotate(2deg);
-    }
-
-    50% {
-        transform: translate(-1px, 0) rotate(-1deg);
-    }
-
-    60% {
-        transform: translate(1px, 0) rotate(1deg);
-    }
-
-    70% {
-        transform: translate(-1px, 0) rotate(-1deg);
-    }
-
-    80% {
-        transform: translate(1px, 0) rotate(1deg);
-    }
-
-    90% {
-        transform: translate(0, 0) rotate(0);
-    }
-
     100% {
-        transform: translate(0, 0) rotate(0);
+        transform: translateX(-50%);
     }
 }
 
+/* --- GRADE DE REDES SOCIAIS --- */
+.epic-social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
 
-@media (max-width: 1200px) {
-    .conteudo-principal h1 {
-        font-size: 80px;
+.epic-social-card {
+    position: relative;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #888;
+    overflow: hidden;
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    visibility: hidden;
+}
+
+.epic-social-card.animated-done {
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-card-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.epic-social-card i {
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.epic-social-card span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.epic-social-card::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 1;
+}
+
+.epic-social-card:hover {
+    transform: translateY(-10px);
+}
+
+.epic-social-card:hover i {
+    transform: scale(1.2);
+}
+
+.epic-social-card:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* --- GLITCH GLOBAL BACKGROUND --- */
+.epic-dev-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 2px);
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.05;
+    animation: globalGlitch 12s infinite linear;
+}
+
+@keyframes globalGlitch {
+    0%, 95% {
+        opacity: 0.05;
+        transform: translateY(0);
+        filter: contrast(100%);
     }
-
-    #tecnologias h2,
-    #projects h2 {
-        font-size: 40px;
+    96% {
+        opacity: 0.15;
+        transform: translateY(-2px);
+        filter: contrast(150%) hue-rotate(45deg);
+    }
+    97% {
+        opacity: 0.05;
+        transform: translateY(2px);
+    }
+    98% {
+        opacity: 0.1;
+        transform: translateY(-1px);
+    }
+    100% {
+        opacity: 0.05;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 992px) {
-    .conteudo-principal h1 {
-        font-size: 60px;
+.dev-scroll-indicator {
+    text-align: center;
+    margin: -10px auto 60px;
+    opacity: 0.7;
+    animation: bounceIndicator 2s infinite ease-in-out;
+    position: relative;
+    z-index: 5;
+    visibility: hidden;
+}
+
+.scroll-mouse {
+    display: block;
+    width: 24px;
+    height: 36px;
+    border: 2px solid var(--primary-neon);
+    border-radius: 12px;
+    margin: 0 auto 10px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.scroll-mouse::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 6px;
+    background: var(--primary-neon);
+    border-radius: 2px;
+    animation: scrollWheel 2s infinite;
+}
+
+.scroll-text {
+    font-size: 0.8rem;
+    color: var(--primary-neon);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+@keyframes scrollWheel {
+    0% {
+        top: 6px;
+        opacity: 1;
+    }
+    100% {
+        top: 18px;
+        opacity: 0;
+    }
+}
+
+@keyframes bounceIndicator {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(var(--primary-rgb, 0, 242, 165), 0.3) 0%, rgba(var(--secondary-rgb, 0, 162, 213), 0.15) 40%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    mix-blend-mode: screen;
+    filter: blur(40px);
+}
+
+.epic-social-card:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.epic-social-card:hover::before {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- SEÇÃO DE PROJETOS --- */
+.epic-projects-section {
+    margin-top: 100px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.epic-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.epic-project-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    visibility: hidden;
+    width: 100%;
+}
+
+.epic-project-card.animated-done {
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.epic-project-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(var(--primary-rgb, 0, 242, 165), 0.3);
+    background: linear-gradient(135deg, rgba(var(--secondary-rgb, 0, 162, 213), 0.04), rgba(var(--primary-rgb, 0, 242, 165), 0.04));
+    box-shadow: 0 15px 30px rgba(var(--primary-rgb, 0, 242, 165), 0.1);
+}
+
+.epic-project-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.epic-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.epic-project-card:hover .epic-project-image {
+    transform: scale(1.08);
+}
+
+.epic-project-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.epic-project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.epic-project-card:hover .epic-project-title {
+    color: var(--primary-neon);
+}
+
+.epic-project-desc {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.epic-project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.epic-project-tags span {
+    background: rgba(var(--primary-rgb, 0, 242, 165), 0.05);
+    color: var(--primary-neon);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(var(--primary-rgb, 0, 242, 165), 0.25);
+    transition: all 0.3s ease;
+}
+
+.epic-project-card:hover .epic-project-tags span {
+    border-color: var(--primary-neon);
+    background: rgba(var(--primary-rgb, 0, 242, 165), 0.12);
+    box-shadow: 0 0 10px rgba(var(--primary-rgb, 0, 242, 165), 0.1);
+}
+
+/* --- FOOTER --- */
+.epic-footer {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 80px 20px 40px;
+    width: 100%;
+}
+
+.epic-footer-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+    margin-bottom: 30px;
+}
+
+.epic-footer p {
+    font-size: 0.9rem;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVIDADE E CORREÇÃO DE BUGS DE LAYOUT --- */
+@media (max-width: 1024px) {
+    .epic-image-wrapper {
+        width: 260px;
+        height: 260px;
+        margin-bottom: 10px;
     }
 
-    #btn-ver-projects {
-        width: 250px;
-        font-size: 20px;
+    .epic-showcase-panel {
+        grid-template-columns: 1fr;
     }
 
-    .projeto {
-        width: 320px;
+    .showcase-visual {
+        display: none;
     }
 
-    .image-project {
+    .epic-hero-section {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-text-mask {
+        justify-content: center;
+    }
+
+    .epic-hero-right {
+        text-align: center;
+        padding: 0;
+    }
+
+    .epic-title {
+        text-align: center;
+    }
+
+    .epic-subtitle {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .epic-action-group {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .epic-dev-container {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    .epic-section-spacing {
+        margin-top: 80px;
+    }
+
+    .epic-glass-panel,
+    .epic-showcase-panel {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+
+    .glass-title,
+    .showcase-title {
+        font-size: 1.45rem;
+        margin-bottom: 15px;
+    }
+
+    .showcase-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .glass-text,
+    .showcase-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .epic-projects-grid {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 20px;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 15px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+
+    .epic-projects-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .epic-project-card {
+        flex: 0 0 290px;
+        scroll-snap-align: center;
+        border-radius: 20px;
+        height: auto;
+    }
+
+    .epic-project-image-wrapper {
+        height: 180px;
+    }
+
+    .epic-project-content {
+        padding: 20px;
+    }
+
+    .epic-social-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 12px;
+    }
+
+    .epic-social-card {
+        padding: 20px 10px;
+        border-radius: 15px;
+    }
+
+    .epic-social-card i {
+        font-size: 2rem;
+    }
+
+    .epic-social-card span {
+        font-size: 0.8rem;
+    }
+
+    .tech-item {
+        padding: 12px 24px;
+        font-size: 1rem;
+        margin: 0 10px;
+    }
+
+    .tech-item i {
+        font-size: 1.25rem;
+    }
+
+    .epic-action-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .epic-action-group .epic-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+    
+    .orbital-ring {
+        top: -12px;
+        left: -12px;
+        right: -12px;
+        bottom: -12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .epic-image-wrapper {
+        width: 200px;
         height: 200px;
     }
-}
 
-@media (max-width: 600px) {
-    .cabeçalho {
-        height: 50vh;
+    .epic-title {
+        font-size: 2.2rem;
     }
 
-    .conteudo-principal span {
-        font-size: 12px;
-        letter-spacing: 1px;
-        margin: 0 0 10px;
-    }
-
-    .conteudo-principal h1 {
-        font-size: 52px;
-        width: 100%;
-    }
-
-    .conteudo-principal {
-        align-items: center;
-        padding: 10px;
-    }
-
-    #btn-ver-projects {
-        width: 200px;
-        font-size: 16px;
-    }
-
-    #btn-ver-projects:hover {
-        width: 280px;
-    }
-
-    #tecnologias h2,
-    #projects h2 {
-        font-size: 30px;
-    }
-
-    .texto-project h3 {
-        font-size: 20px;
-    }
-
-    .texto-project p {
-        font-size: 14px;
-    }
-
-    .projeto {
-        width: 90%;
-        margin: 10px 0px;
-    }
-
-    .image-project {
-        height: 240px;
-    }
-
-    .tecnologia-item {
-        width: 90%;
-    }
-
-    .area-projetos {
-        flex-direction: column;
-        align-items: center;
-        gap: 0px;
-
-    }
-
-    .footer-content h2 {
-        font-size: 20px;
-    }
-
-    .btn-whatsapp {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 400px) {
-    .conteudo-principal h1 {
-        font-size: 32px;
-    }
-
-    #btn-ver-projects {
-        width: 150px;
-        font-size: 14px;
+    .epic-section-title {
+        font-size: 1.7rem;
     }
 }

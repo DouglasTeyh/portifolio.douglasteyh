@@ -1,14 +1,22 @@
 <style>
-
 #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     min-height: 80px;
-    background-color: transparent;
-    padding: 0 15%;
+    background: rgba(5, 5, 5, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0 10%;
     box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
 }
 
 .navbar {
@@ -22,25 +30,27 @@
 .logo {
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 800;
     color: #fff;
     height: 60px;
-    gap: 5px;
-    cursor:default;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .logo h2 {
-    padding: 5px 10px;
-    border-radius: 10px 0 10px 0;
-    background-image: var(--diagonal-gradient);
-    transition: all 0.3s ease-in-out;
+    margin: 0;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, #00F2A5, #00A2D5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
 }
 
-.logo h2:hover{
-    transform: scale(1.05) rotate3d(0, 1, 0, 10deg);
-    transition: all 0.3s ease-in-out;
-    background-image: var(--diagonal-gradient-2);
+.logo:hover h2 {
+    filter: drop-shadow(0 0 10px rgba(0, 242, 165, 0.6));
+    transform: scale(1.05);
 }
 
 .links-navbar ul {
@@ -52,7 +62,6 @@
     padding: 0;
     align-items: center;
     height: 60px;
-    
 }
 
 .links-navbar ul li {
@@ -62,67 +71,69 @@
 }
 
 .links-navbar ul li a {    
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    height: 40px;
-    padding: 0 1rem;
-    color: #fff;
+    justify-content: center;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 700;
     text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    border-radius: 0;
-    border: 1px solid transparent;
-    font-weight: 500;
-    border-image: var(--diagonal-gradient) 1;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.03);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .links-navbar ul li a:hover {
-    border-image: var(--diagonal-gradient-2) 1;
-    background-image: var(--diagonal-gradient-2);
-    border-width: 3px;
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 2px 8px rgba(255,255,255,0.2);
+    background: #fff;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Modificação específica para quando for o botão de orçamento destacado */
+.links-navbar ul li a#orcamento-btn {
+    border-color: rgba(0, 242, 165, 0.3);
+    color: #00F2A5;
+}
+
+.links-navbar ul li a#orcamento-btn:hover {
+    background: #00F2A5;
+    color: #000;
+    border-color: #00F2A5;
+    box-shadow: 0 10px 25px rgba(0, 242, 165, 0.3);
 }
 
 @media (max-width: 768px) {
     #header {
         padding: 0 5%;
+        min-height: 70px;
     }
 
     .navbar {
         flex-direction: row;
         justify-content: space-between;
-        gap: 10px;
     }
 
     .links-navbar ul {
-        flex-direction: column;
         gap: 10px;
         height: auto;
     }
 
     .links-navbar ul li a {
-        width: 100%;
-        justify-content: center;
-        border-width: 2px;
-    }
-
-    .logo {
-        justify-content: center;
-    }
-
-    .logo h2 {
-        padding: 7px 20px;
-        font-size: 1.4rem;
+        padding: 8px 18px;
+        font-size: 0.8rem;
     }
 }
-
 </style>
 
 <body>
 <header id="header">
     <nav class="navbar">
-        <div class="logo">
+        <div class="logo" onclick="window.location.href='index.html'">
             <h2>@douglasteyh</h2>
         </div>
         <div class="links-navbar">
@@ -132,5 +143,4 @@
         </div>
     </nav>
 </header>
-
 </body>
