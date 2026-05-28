@@ -397,12 +397,14 @@ select option {
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-sucesso .btn-voltar:hover {
     background: var(--primary-neon);
-    box-shadow: 0 10px 20px rgba(var(--primary-rgb, 0, 242, 165), 0.2);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(var(--primary-rgb), 0.4);
 }
 
 /* --- RESPONSIVIDADE DO WIZARD --- */

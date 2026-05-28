@@ -42,14 +42,14 @@
 .logo h2 {
     margin: 0;
     font-size: 1.3rem;
-    background: linear-gradient(135deg, #00F2A5, #00A2D5);
+    background: linear-gradient(135deg, #ff0066, #7f00ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
 }
 
 .logo:hover h2 {
-    filter: drop-shadow(0 0 10px rgba(0, 242, 165, 0.6));
+    filter: drop-shadow(0 0 10px rgba(255, 0, 102, 0.6));
     transform: scale(1.05);
 }
 
@@ -81,7 +81,7 @@
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(255, 255, 255, 0.03);
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -90,21 +90,22 @@
 .links-navbar ul li a:hover {
     background: #fff;
     color: #000;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
 }
 
 /* Modificação específica para quando for o botão de orçamento destacado */
 .links-navbar ul li a#orcamento-btn {
-    border-color: rgba(0, 242, 165, 0.3);
-    color: #00F2A5;
+    border-color: rgba(255, 0, 102, 0.35);
+    color: #ff0066;
 }
 
 .links-navbar ul li a#orcamento-btn:hover {
-    background: #00F2A5;
+    background: #ff0066;
     color: #000;
-    border-color: #00F2A5;
-    box-shadow: 0 10px 25px rgba(0, 242, 165, 0.3);
+    border-color: #ff0066;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 102, 0.4);
 }
 
 @media (max-width: 768px) {

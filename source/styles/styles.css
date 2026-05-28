@@ -241,7 +241,7 @@ span {
     border-radius: 30px;
     font-weight: 700;
     text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 }
 
@@ -252,7 +252,9 @@ span {
 
 .epic-btn-primary:hover {
     background: var(--primary-neon);
-    box-shadow: 0 10px 30px rgba(var(--primary-rgb, 0, 242, 165), 0.3);
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(var(--primary-rgb), 0.4);
 }
 
 .epic-btn-secondary {
@@ -262,7 +264,10 @@ span {
 }
 
 .epic-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
 }
 
 /* --- SEÇÕES E ESPAÇAMENTOS --- */
@@ -296,8 +301,8 @@ span {
     grid-template-columns: 1fr 200px;
     gap: 40px;
     align-items: center;
-    background: linear-gradient(135deg, rgba(var(--secondary-rgb, 0, 162, 213), 0.03), rgba(var(--primary-rgb, 0, 242, 165), 0.03));
-    border-color: rgba(var(--primary-rgb, 0, 242, 165), 0.15);
+    background: linear-gradient(135deg, rgba(var(--secondary-rgb), 0.03), rgba(var(--primary-rgb), 0.03));
+    border-color: rgba(var(--primary-rgb), 0.15);
 }
 
 .glass-icon-header {
@@ -333,14 +338,17 @@ span {
 }
 
 .showcase-badge {
-    background: var(--primary-neon);
-    color: #000;
-    padding: 5px 15px;
-    border-radius: 20px;
+    background: transparent;
+    color: var(--primary-neon);
+    border-left: 3px solid var(--primary-neon);
+    padding: 2px 0 2px 12px;
+    border-radius: 0;
     font-size: 0.8rem;
     font-weight: 800;
+    letter-spacing: 1.5px;
     display: inline-block;
     margin-bottom: 15px;
+    text-transform: uppercase;
 }
 
 .showcase-tags {
@@ -350,25 +358,15 @@ span {
     margin-top: 25px;
 }
 
-.showcase-tags span {
-    background: rgba(var(--primary-rgb, 0, 242, 165), 0.08);
-    color: var(--primary-neon);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    border: 1px solid rgba(var(--primary-rgb, 0, 242, 165), 0.35);
-    text-shadow: 0 0 10px rgba(var(--primary-rgb, 0, 242, 165), 0.2);
-}
-
 .showcase-icon-large {
     font-size: 8rem;
     color: rgba(255, 255, 255, 0.02);
-    text-shadow: 0 0 50px rgba(var(--primary-rgb, 0, 242, 165), 0.15);
+    text-shadow: 0 0 50px rgba(var(--primary-rgb), 0.15);
     transition: all 0.5s ease;
 }
 
 .epic-showcase-panel:hover .showcase-icon-large {
-    color: rgba(var(--primary-rgb, 0, 242, 165), 0.1);
+    color: rgba(var(--primary-rgb), 0.1);
     transform: scale(1.1) rotate(15deg);
 }
 
@@ -616,7 +614,7 @@ span {
     left: 0;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(var(--primary-rgb, 0, 242, 165), 0.3) 0%, rgba(var(--secondary-rgb, 0, 162, 213), 0.15) 40%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, rgba(var(--secondary-rgb), 0.08) 40%, transparent 70%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -673,9 +671,9 @@ span {
 
 .epic-project-card:hover {
     transform: translateY(-10px);
-    border-color: rgba(var(--primary-rgb, 0, 242, 165), 0.3);
-    background: linear-gradient(135deg, rgba(var(--secondary-rgb, 0, 162, 213), 0.04), rgba(var(--primary-rgb, 0, 242, 165), 0.04));
-    box-shadow: 0 15px 30px rgba(var(--primary-rgb, 0, 242, 165), 0.1);
+    border-color: rgba(var(--primary-rgb), 0.3);
+    background: linear-gradient(135deg, rgba(var(--secondary-rgb), 0.04), rgba(var(--primary-rgb), 0.04));
+    box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.15);
 }
 
 .epic-project-image-wrapper {
@@ -731,23 +729,37 @@ span {
 }
 
 .epic-project-tags span {
-    background: rgba(var(--primary-rgb, 0, 242, 165), 0.05);
-    color: var(--primary-neon);
-    padding: 5px 12px;
-    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.02);
+    color: #888;
+    padding: 5px 10px;
+    border-radius: 4px;
     font-size: 0.8rem;
     font-weight: 600;
-    border: 1px solid rgba(var(--primary-rgb, 0, 242, 165), 0.25);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: default;
 }
 
-.epic-project-card:hover .epic-project-tags span {
-    border-color: var(--primary-neon);
-    background: rgba(var(--primary-rgb, 0, 242, 165), 0.12);
-    box-shadow: 0 0 10px rgba(var(--primary-rgb, 0, 242, 165), 0.1);
+.showcase-tags span {
+    background: rgba(255, 255, 255, 0.02);
+    color: #aaa;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    cursor: default;
 }
 
-/* --- FOOTER --- */
+/* Hashtag prefix for tags */
+.epic-project-tags span::before,
+.showcase-tags span::before,
+.skill-tags span::before {
+    content: "#";
+    color: var(--primary-neon);
+    margin-right: 3px;
+    opacity: 0.8;
+    font-weight: 700;
+}
 .epic-footer {
     position: relative;
     z-index: 2;
@@ -966,19 +978,22 @@ span {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .tab-btn:hover {
     color: #fff;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 .tab-btn.active {
     background: var(--primary-neon);
     color: #000;
     border-color: var(--primary-neon);
-    box-shadow: 0 0 15px rgba(var(--primary-rgb, 255, 0, 102), 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.45);
 }
 
 .tab-pane {
@@ -1010,13 +1025,14 @@ span {
 }
 
 .timeline-badge {
-    background: rgba(var(--primary-rgb, 255, 0, 102), 0.1);
+    background: rgba(var(--primary-rgb), 0.05);
     color: var(--primary-neon);
-    font-size: 0.75rem;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid rgba(var(--primary-rgb, 255, 0, 102), 0.25);
+    font-size: 0.72rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(var(--primary-rgb), 0.25);
     font-weight: 700;
+    cursor: default;
 }
 
 .timeline-org {
@@ -1095,20 +1111,14 @@ span {
 }
 
 .skill-tags span {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    color: #ccc;
-    padding: 5px 12px;
-    border-radius: 50px;
-    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #aaa;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.skill-tags span:hover {
-    border-color: var(--primary-neon);
-    background: rgba(var(--primary-rgb, 255, 0, 102), 0.05);
-    color: var(--primary-neon);
+    cursor: default;
 }
 
 .tab-buttons-group {
@@ -1121,18 +1131,23 @@ span {
     padding: 10px 24px;
     font-size: 0.85rem;
     border-radius: 20px;
-    border: 1px solid rgba(var(--primary-rgb, 255, 0, 102), 0.3);
+    border: 1px solid rgba(var(--primary-rgb), 0.35);
     color: var(--primary-neon);
-    background: rgba(var(--primary-rgb, 255, 0, 102), 0.03);
+    background: rgba(var(--primary-rgb), 0.05);
     font-weight: 700;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
 }
 
 .download-cv-btn:hover {
     background: var(--primary-neon) !important;
     color: #000 !important;
     border-color: var(--primary-neon) !important;
-    box-shadow: 0 0 15px rgba(var(--primary-rgb, 255, 0, 102), 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(var(--primary-rgb), 0.5);
 }
 
 @media (max-width: 768px) {
