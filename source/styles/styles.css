@@ -943,3 +943,218 @@ span {
         font-size: 1.7rem;
     }
 }
+
+/* --- CURRÍCULO E ABAS --- */
+.curriculum-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #888;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: var(--primary-neon);
+    color: #000;
+    border-color: var(--primary-neon);
+    box-shadow: 0 0 15px rgba(var(--primary-rgb, 255, 0, 102), 0.3);
+}
+
+.tab-pane {
+    outline: none;
+}
+
+/* Timeline e certificações */
+.timeline-item {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.timeline-badge {
+    background: rgba(var(--primary-rgb, 255, 0, 102), 0.1);
+    color: var(--primary-neon);
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(var(--primary-rgb, 255, 0, 102), 0.25);
+    font-weight: 700;
+}
+
+.timeline-org {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.cert-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.cert-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 15px 20px;
+    border-radius: 15px;
+}
+
+.cert-list li i {
+    font-size: 1.3rem;
+    color: var(--secondary-neon);
+    margin-top: 2px;
+}
+
+.cert-list li div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cert-list li strong {
+    color: #fff;
+}
+
+.cert-list li span {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.skill-category {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.skill-category h4 {
+    color: var(--secondary-neon);
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #ccc;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.skill-tags span:hover {
+    border-color: var(--primary-neon);
+    background: rgba(var(--primary-rgb, 255, 0, 102), 0.05);
+    color: var(--primary-neon);
+}
+
+.tab-buttons-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.download-cv-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    border: 1px solid rgba(var(--primary-rgb, 255, 0, 102), 0.3);
+    color: var(--primary-neon);
+    background: rgba(var(--primary-rgb, 255, 0, 102), 0.03);
+    font-weight: 700;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-cv-btn:hover {
+    background: var(--primary-neon) !important;
+    color: #000 !important;
+    border-color: var(--primary-neon) !important;
+    box-shadow: 0 0 15px rgba(var(--primary-rgb, 255, 0, 102), 0.3);
+}
+
+@media (max-width: 768px) {
+    .curriculum-tabs {
+        justify-content: space-between;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .tab-buttons-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .tab-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .download-cv-btn {
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+    }
+}

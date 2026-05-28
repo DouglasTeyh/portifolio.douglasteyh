@@ -60,23 +60,139 @@
             </div>
         </div>
 
-        <!-- 2. Trajetória (Contida) -->
         <div class="container container-large epic-section-spacing">
             <div class="epic-glass-panel gs-reveal-up">
                 <div class="glass-panel-content">
-                    <div class="glass-icon-header"><i class="fa-solid fa-graduation-cap"></i> Trajetória & Visão</div>
-                    <h2 class="glass-title">Carreira Acadêmica</h2>
-                    <p class="glass-text">
-                        Estudante de <strong>Análise e Desenvolvimento de Sistemas</strong> no Instituto Federal de
-                        Pernambuco (IFPE), campus Palmares. Minha jornada é guiada pela paixão em extrair de dados
-                        complexos, soluções computacionais eficientes.
-                    </p>
-                    <p class="glass-text">
-                        Como desenvolvedor Full Stack, construo pontes entre o back-end estável e interfaces front-end
-                        performáticas. Como Bolsista PIBIC de Pesquisa Científica, exploro os limites da Inteligência
-                        Artificial em soluções de Saúde (Healthcare IoT), aplicando a ciência em cenários onde precisão
-                        é vital.
-                    </p>
+                    <div class="glass-icon-header"><i class="fa-solid fa-address-card"></i> Currículo & Habilidades</div>
+                    
+                    <!-- Navegação de Abas -->
+                    <div class="curriculum-tabs">
+                        <div class="tab-buttons-group">
+                            <button class="tab-btn active" data-tab="profile">
+                                <i class="fa-solid fa-user"></i> Perfil
+                            </button>
+                            <button class="tab-btn" data-tab="education">
+                                <i class="fa-solid fa-graduation-cap"></i> Formação & Certificados
+                            </button>
+                            <button class="tab-btn" data-tab="skills">
+                                <i class="fa-solid fa-screwdriver-wrench"></i> Habilidades
+                            </button>
+                        </div>
+                        <a href="source/docs/CV-DouglasTranquilino.pdf" download="CV-DouglasTranquilino.pdf" class="epic-btn download-cv-btn">
+                            <i class="fa-solid fa-download"></i> <span>Baixar CV</span>
+                        </a>
+                    </div>
+
+                    <!-- Conteúdo das Abas -->
+                    <div class="tab-contents">
+                        <!-- Aba 1: Perfil -->
+                        <div class="tab-pane active" id="profile">
+                            <h3 class="glass-title">Resumo Profissional</h3>
+                            <p class="glass-text">
+                                Sou desenvolvedor Full Stack e pesquisador focado em criar aplicações robustas. Tenho sólidos conhecimentos em linguagens como Python, JavaScript, TypeScript, SQL, HTML, CSS e também estudo Machine Learning. Trabalho desenvolvendo soluções ponta a ponta, do backend (construção de APIs REST com Flask e Node.js) ao frontend (React, Vue.js e Angular).
+                            </p>
+                            <p class="glass-text">
+                                Busco aplicar boas práticas de desenvolvimento como Padrões de Projeto, SOLID, DRY e os conceitos do 12 Factors, além de CI/CD e estratégias de cache para otimizar a entrega de software e infraestrutura.
+                            </p>
+                            
+                            <h3 class="glass-title" style="margin-top: 30px;">Informações Adicionais</h3>
+                            <p class="glass-text">
+                                Tenho forte interesse em pesquisa científica aplicada à tecnologia. Um reflexo disso foi a publicação de artigo científico pela <strong>Sociedade Brasileira de Computação (SBC)</strong> focado em modelos preditivos para estratificação de risco de AVC, apresentado no simpósio BSB. Atualmente me aprofundo em DevOps, automação e arquitetura na nuvem (AWS e GCP).
+                            </p>
+                            <p class="glass-text">
+                                <i class="fa-solid fa-location-dot" style="color: var(--primary-neon); margin-right: 6px;"></i> Disponível para viagens de trabalho e atuação em cidades próximas.
+                                <br>
+                                <i class="fa-solid fa-hand-holding-dollar" style="color: var(--primary-neon); margin-right: 6px;"></i> Pretensão Salarial: Faixa de R$ 2.400,00.
+                            </p>
+                        </div>
+
+                        <!-- Aba 2: Formação & Certificados -->
+                        <div class="tab-pane" id="education" style="display: none;">
+                            <h3 class="glass-title">Formação Acadêmica</h3>
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <span class="timeline-title">Análise e Desenvolvimento de Sistemas</span>
+                                    <span class="timeline-badge">Graduação • Em Andamento</span>
+                                </div>
+                                <span class="timeline-org">Instituto Federal de Pernambuco (IFPE) - Campus Palmares</span>
+                            </div>
+
+                            <h3 class="glass-title" style="margin-top: 30px;">Certificações</h3>
+                            <ul class="cert-list">
+                                <li>
+                                    <i class="fa-solid fa-award"></i>
+                                    <div>
+                                        <strong>Formação Backend</strong> — ORACLE ft. Alura
+                                        <span>2025</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-award"></i>
+                                    <div>
+                                        <strong>Formação Data Science</strong> — Alura
+                                        <span>2025</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-award"></i>
+                                    <div>
+                                        <strong>Formação Backend</strong> — SOFTEX Pernambuco
+                                        <span>2024</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Aba 3: Habilidades -->
+                        <div class="tab-pane" id="skills" style="display: none;">
+                            <h3 class="glass-title">Habilidades Técnicas</h3>
+                            <div class="skills-grid">
+                                <div class="skill-category">
+                                    <h4>Linguagens & Dados</h4>
+                                    <div class="skill-tags">
+                                        <span>Python</span>
+                                        <span>JavaScript</span>
+                                        <span>TypeScript</span>
+                                        <span>Java</span>
+                                        <span>SQL</span>
+                                        <span>HTML5</span>
+                                        <span>CSS3</span>
+                                        <span>Machine Learning</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <h4>Frameworks & Ferramentas</h4>
+                                    <div class="skill-tags">
+                                        <span>React</span>
+                                        <span>Vue.js</span>
+                                        <span>Angular</span>
+                                        <span>Node.js</span>
+                                        <span>Flask</span>
+                                        <span>Spring Boot</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <h4>Metodologias & Cloud</h4>
+                                    <div class="skill-tags">
+                                        <span>SOLID</span>
+                                        <span>DRY</span>
+                                        <span>Padrões de Projeto</span>
+                                        <span>12 Factors</span>
+                                        <span>CI/CD</span>
+                                        <span>AWS</span>
+                                        <span>GCP</span>
+                                    </div>
+                                </div>
+                                <div class="skill-category">
+                                    <h4>Idiomas</h4>
+                                    <div class="skill-tags">
+                                        <span>Inglês (Intermediário)</span>
+                                        <span>Português (Nativo)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

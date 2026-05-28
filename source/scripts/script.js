@@ -250,6 +250,39 @@ function initEpicDeveloperAnimations() {
             });
         });
     });
+    // --- Lógica de Abas do Currículo ---
+    const tabButtons = document.querySelectorAll('.curriculum-tabs .tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-contents .tab-pane');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            // Atualizar botões
+            tabButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Transição suave com GSAP
+            tabPanes.forEach(pane => {
+                if (pane.id === targetTab) {
+                    pane.style.display = 'block';
+                    if (typeof gsap !== 'undefined') {
+                        gsap.fromTo(pane, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+                    }
+                    // Re-aplicar crypto scramble no título da aba ativa
+                    const title = pane.querySelector('.glass-title');
+                    if (title) {
+                        title.classList.remove('scrambled-done');
+                        if (window.applyCryptoScramble) {
+                            window.applyCryptoScramble(title);
+                        }
+                    }
+                } else {
+                    pane.style.display = 'none';
+                }
+            });
+        });
+    });
 
     // Atualizar ScrollTrigger em intervalos para evitar inconsistências
     setTimeout(() => typeof ScrollTrigger !== 'undefined' && ScrollTrigger.refresh(), 100);
